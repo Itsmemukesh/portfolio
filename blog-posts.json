@@ -1,0 +1,50 @@
+[
+  {
+    "title": "[Blog content to be updated from technicalwriting.xyz]",
+    "slug": "cloud-documentation-best-practices",
+    "date": "2025-01-15",
+    "tags": [
+      "Cloud Technologies",
+      "Documentation",
+      "SaaS"
+    ],
+    "excerpt": "Insights and best practices for documenting cloud-based solutions and SaaS products - content to be updated from actual blog",
+    "readTime": "8 min read",
+    "featured": true,
+    "category": "Technical Writing",
+    "author": "Mukesh Biswas",
+    "note": "Content should be updated from actual blog at technicalwriting.xyz"
+  },
+  {
+    "title": "[Blog content to be updated from technicalwriting.xyz]",
+    "slug": "api-documentation-strategies",
+    "date": "2025-01-08",
+    "tags": [
+      "API Documentation",
+      "Developer Experience",
+      "Technical Writing"
+    ],
+    "excerpt": "Strategies for creating effective API documentation for developers - content to be updated from actual blog",
+    "readTime": "6 min read",
+    "featured": true,
+    "category": "API Documentation",
+    "author": "Mukesh Biswas",
+    "note": "Content should be updated from actual blog at technicalwriting.xyz"
+  },
+  {
+    "title": "[Blog content to be updated from technicalwriting.xyz]",
+    "slug": "cross-functional-collaboration-tips",
+    "date": "2025-01-01",
+    "tags": [
+      "Collaboration",
+      "Product Management",
+      "Technical Writing"
+    ],
+    "excerpt": "Tips for effective collaboration with product managers, engineers, and developers - content to be updated from actual blog",
+    "readTime": "7 min read",
+    "featured": false,
+    "category": "Collaboration",
+    "author": "Mukesh Biswas",
+    "note": "Content should be updated from actual blog at technicalwriting.xyz"
+  }
+]

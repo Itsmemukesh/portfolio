@@ -1,0 +1,12 @@
+{
+  "name": "mukesh-portfolio",
+  "version": "1.0.0",
+  "description": "This directory contains updated portfolio data files based on real information found about Mukesh Biswas.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,60 @@
+[
+  {
+    "title": "Comprehensive API Documentation Suite",
+    "description": "Leading the development of customer-facing API guides and documentation for Diligent's SaaS platform serving over 1 million users globally.",
+    "technologies": [
+      "API Documentation",
+      "SaaS",
+      "Cloud Technologies",
+      "Technical Writing"
+    ],
+    "category": "Documentation",
+    "status": "Ongoing",
+    "impact": "Improved developer onboarding and API adoption for governance, risk and compliance solutions",
+    "image": "https://example.com/api-docs-project.png",
+    "featured": true
+  },
+  {
+    "title": "Multi-Product Release Notes Strategy",
+    "description": "Designed and implemented a comprehensive release notes strategy supporting multiple product roadmaps while managing competing priorities.",
+    "technologies": [
+      "Release Management",
+      "Documentation Strategy",
+      "Cross-functional Collaboration"
+    ],
+    "category": "Strategy",
+    "status": "Completed",
+    "impact": "Streamlined communication of product updates across various stakeholder groups",
+    "image": "https://example.com/release-notes-project.png",
+    "featured": true
+  },
+  {
+    "title": "Technical Writing Blog Platform",
+    "description": "Personal blog at technicalwriting.xyz sharing insights and best practices in technical writing, combining professional expertise with passion for content creation.",
+    "technologies": [
+      "Blogging",
+      "Content Strategy",
+      "Technical Writing"
+    ],
+    "category": "Personal Project",
+    "status": "Ongoing",
+    "impact": "Knowledge sharing and thought leadership in the technical writing community",
+    "image": "https://example.com/blog-project.png",
+    "featured": false,
+    "link": "https://technicalwriting.xyz"
+  },
+  {
+    "title": "User Experience Documentation Improvement",
+    "description": "Collaborated with product managers, design engineers, and developers to improve user experience through refined product content and customer-facing help materials.",
+    "technologies": [
+      "UX Writing",
+      "Cross-functional Collaboration",
+      "User Experience"
+    ],
+    "category": "Documentation",
+    "status": "Completed",
+    "impact": "Enhanced user experience and reduced support ticket volume through better documentation",
+    "image": "https://example.com/ux-docs-project.png",
+    "featured": true
+  }
+]
