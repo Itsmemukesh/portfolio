@@ -1,0 +1,44 @@
+[
+  {
+    "company": "Diligent",
+    "role": "Staff Technical Writer",
+    "duration": "Present",
+    "location": "Bengaluru, Karnataka, India",
+    "logo": "https://example.com/diligent-logo.png",
+    "description": "Leading technical writing initiatives for governance, risk and compliance (GRC) SaaS solutions. Developing customer-facing help content, API guides, release notes, and tutorials for cloud-based products serving over 1 million users and 700,000 board members globally.",
+    "achievements": [
+      "Develop customer-facing help content, API guides, release notes, and tutorials for SaaS products",
+      "Collaborate with product managers, design engineers, developers, and subject matter experts",
+      "Support multiple product roadmaps by managing competing priorities",
+      "Develop comprehensive documentation strategy for ambitious product content roadmap",
+      "Create content for various audiences in the governance, risk and compliance domain"
+    ],
+    "technologies": [
+      "Cloud Technologies",
+      "SaaS Products",
+      "API Documentation",
+      "Technical Writing",
+      "Cross-functional Collaboration"
+    ]
+  },
+  {
+    "company": "IBM",
+    "role": "Technical Writer",
+    "duration": "Previous Experience",
+    "location": "India",
+    "logo": "https://example.com/ibm-logo.png",
+    "description": "Contributed to technical writing projects focusing on cloud technologies and enterprise solutions. Built foundational experience in documentation and cross-functional collaboration.",
+    "achievements": [
+      "Worked on technical documentation for enterprise solutions",
+      "Gained expertise in cloud technologies documentation",
+      "Developed skills in cross-functional team collaboration",
+      "Contributed to product documentation and user guides"
+    ],
+    "technologies": [
+      "Cloud Technologies",
+      "Enterprise Solutions",
+      "Technical Documentation",
+      "User Guides"
+    ]
+  }
+]

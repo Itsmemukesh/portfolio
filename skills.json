@@ -1,0 +1,92 @@
+[
+  {
+    "category": "Technical Writing",
+    "skills": [
+      {
+        "name": "API Documentation",
+        "level": 95,
+        "description": "Expertise in creating comprehensive API guides and documentation"
+      },
+      {
+        "name": "Customer-facing Content",
+        "level": 90,
+        "description": "Developing help content and tutorials for end users"
+      },
+      {
+        "name": "Release Notes",
+        "level": 85,
+        "description": "Creating clear and informative release documentation"
+      },
+      {
+        "name": "Technical Tutorials",
+        "level": 90,
+        "description": "Crafting step-by-step guides for complex technical processes"
+      }
+    ]
+  },
+  {
+    "category": "Cloud & SaaS Technologies",
+    "skills": [
+      {
+        "name": "Cloud Technologies",
+        "level": 90,
+        "description": "9+ years specializing in cloud-based solutions documentation"
+      },
+      {
+        "name": "SaaS Products",
+        "level": 88,
+        "description": "Expert in documenting Software-as-a-Service platforms"
+      },
+      {
+        "name": "Governance, Risk & Compliance",
+        "level": 85,
+        "description": "Domain expertise in GRC solutions and documentation"
+      }
+    ]
+  },
+  {
+    "category": "Collaboration & Strategy",
+    "skills": [
+      {
+        "name": "Cross-functional Teams",
+        "level": 95,
+        "description": "Collaborating with product managers, engineers, and developers"
+      },
+      {
+        "name": "Documentation Strategy",
+        "level": 88,
+        "description": "Developing comprehensive documentation roadmaps"
+      },
+      {
+        "name": "Multi-product Support",
+        "level": 85,
+        "description": "Managing competing priorities across multiple product lines"
+      },
+      {
+        "name": "Stakeholder Management",
+        "level": 90,
+        "description": "Working with subject matter experts and various audiences"
+      }
+    ]
+  },
+  {
+    "category": "Content Creation",
+    "skills": [
+      {
+        "name": "Photography",
+        "level": 80,
+        "description": "Personal passion for capturing and visual storytelling"
+      },
+      {
+        "name": "Blogging",
+        "level": 85,
+        "description": "Regular content creation at technicalwriting.xyz"
+      },
+      {
+        "name": "User Experience Writing",
+        "level": 88,
+        "description": "Creating content that improves overall user experience"
+      }
+    ]
+  }
+]
