@@ -1,7 +1,11 @@
-# Mukesh Biswas — Portfolio Website
+# Mukesh Biswas — Portfolio & Blog
 
-Personal portfolio and services website built with plain HTML, CSS, and JavaScript.
-Live at: **https://Itsmemukesh.github.io/portfolio**
+Personal portfolio and blog built with plain HTML/CSS/JS (portfolio) and Docusaurus (blog).
+
+| URL | What it is |
+|-----|-----------|
+| **https://Itsmemukesh.github.io/portfolio** | Main portfolio site |
+| **https://Itsmemukesh.github.io/portfolio/blog/** | Docusaurus-powered blog |
 
 ---
 
@@ -11,11 +15,12 @@ Live at: **https://Itsmemukesh.github.io/portfolio**
 2. [Branch Overview](#2-branch-overview)
 3. [SSH Key Setup — Two GitHub Accounts](#3-ssh-key-setup--two-github-accounts)
 4. [Running Locally](#4-running-locally)
-5. [Making and Committing Changes](#5-making-and-committing-changes)
-6. [Pushing Changes to GitHub](#6-pushing-changes-to-github)
-7. [Deploying to the Live Website](#7-deploying-to-the-live-website)
-8. [Full End-to-End Workflow](#8-full-end-to-end-workflow)
-9. [Troubleshooting](#9-troubleshooting)
+5. [Writing a New Blog Post](#5-writing-a-new-blog-post)
+6. [Making and Committing Changes](#6-making-and-committing-changes)
+7. [Pushing Changes to GitHub](#7-pushing-changes-to-github)
+8. [Deploying to the Live Website](#8-deploying-to-the-live-website)
+9. [Full End-to-End Workflow](#9-full-end-to-end-workflow)
+10. [Troubleshooting](#10-troubleshooting)
 
 ---
 
@@ -23,17 +28,33 @@ Live at: **https://Itsmemukesh.github.io/portfolio**
 
 ```
 mukesh-portfolio/
-├── index.html          # Main HTML — all page sections
-├── style.css           # All styles — dark/orange design system
-├── app.js              # Interactivity — navbar, scroll, animations
+├── index.html              # Portfolio — main HTML (all page sections)
+├── style.css               # Portfolio — dark/orange design system
+├── app.js                  # Portfolio — navbar, scroll, blog cards, animations
+├── blog-posts.json         # Blog previews shown on the portfolio homepage
 ├── assets/
-│   └── profile.jpg     # Profile photo (replace with your actual photo)
-├── package.json        # npm scripts (start, deploy)
-└── node_modules/       # Dependencies (do not commit this folder)
+│   └── mukesh_profile_pic.jpg
+├── blog/                   # Docusaurus blog (standalone sub-site)
+│   ├── blog/               # Markdown post files go here
+│   │   └── YYYY-MM-DD-post-slug.md
+│   ├── src/css/custom.css  # Docusaurus theme overrides (orange/dark)
+│   ├── docusaurus.config.js
+│   └── package.json
+├── scripts/
+│   └── build.js            # Unified build: portfolio + blog → _site/
+├── package.json            # Root npm scripts (start, build, deploy)
+├── .gitignore
+└── node_modules/           # Do not commit
 ```
 
-**To add your profile photo:** drop a file named `profile.jpg` into the `assets/` folder.
-The hero section and about section will display it automatically.
+**Build output (generated, never commit):**
+```
+_site/               # Full deployable site (portfolio + blog combined)
+blog/build/          # Docusaurus output (copied into _site/blog/)
+blog/node_modules/   # Blog dependencies (do not commit)
+```
+
+**To add your profile photo:** drop a file named `mukesh_profile_pic.jpg` into the `assets/` folder.
 
 ---
 
@@ -125,14 +146,13 @@ SSH key for all push/pull operations on this repo.
 
 ## 4. Running Locally
 
-No build step is required — this is a plain static site.
+### Portfolio only (no build step needed)
 
 ```bash
 npm start
 ```
 
-This starts a local HTTP server at **http://localhost:3000** using Python's built-in
-`http.server`. Open that URL in your browser to preview the site.
+Starts a local server at **http://localhost:3000** using Python's built-in `http.server`.
 
 **Alternative** (if Python is not on PATH):
 
@@ -140,18 +160,91 @@ This starts a local HTTP server at **http://localhost:3000** using Python's buil
 npx serve . -p 3000
 ```
 
+### Blog only (Docusaurus dev server)
+
+```bash
+npm run start:blog
+```
+
+Starts the Docusaurus dev server at **http://localhost:3000** with hot-reload.
+Blog posts live in `blog/blog/`. Any `.md` file you save reloads instantly.
+
+> **Note:** The blog dev server is standalone — it doesn't serve the portfolio.
+> For a combined preview, run `npm run build` and serve the `_site/` folder.
+
 ---
 
-## 5. Making and Committing Changes
+## 5. Writing a New Blog Post
+
+All blog posts live in `blog/blog/` as Markdown files.
+
+### File naming
+
+```
+blog/blog/YYYY-MM-DD-your-post-slug.md
+```
+
+Example: `blog/blog/2025-03-01-ai-writing-workflows.md`
+
+### Post template
+
+```markdown
+---
+slug: ai-writing-workflows
+title: How AI Is Changing Technical Writing Workflows
+authors:
+  name: Mukesh Biswas
+  title: Staff Technical Writer
+  url: https://Itsmemukesh.github.io/portfolio/
+tags: [ai, technical-writing, automation]
+date: 2025-03-01
+---
+
+Opening paragraph visible in the post listing.
+
+<!-- truncate -->
+
+Rest of the post content goes here. Supports full Markdown and MDX.
+```
+
+### Update the homepage preview
+
+After adding a new post, update `blog-posts.json` in the repo root to add it to the
+"From the Blog" section on the portfolio homepage:
+
+```json
+{
+  "title": "How AI Is Changing Technical Writing Workflows",
+  "slug": "ai-writing-workflows",
+  "date": "2025-03-01",
+  "tags": ["AI", "Technical Writing", "Automation"],
+  "excerpt": "A one or two sentence summary shown on the portfolio homepage.",
+  "readTime": "5 min read",
+  "featured": true,
+  "category": "AI & Automation",
+  "author": "Mukesh Biswas"
+}
+```
+
+The `slug` in `blog-posts.json` must match the `slug:` in the post frontmatter — this
+is what links the homepage preview card to the correct Docusaurus page.
+
+---
+
+## 6. Making and Committing Changes
 
 ### Editing content
 
 | What to change | File |
 |----------------|------|
-| Page text, sections, structure | `index.html` |
+| Portfolio page text, sections, structure | `index.html` |
 | Colors, fonts, layout, spacing | `style.css` |
-| Navigation behavior, animations | `app.js` |
-| Profile photo | `assets/profile.jpg` |
+| Navigation behavior, animations, blog cards | `app.js` |
+| Blog post previews on portfolio homepage | `blog-posts.json` |
+| Profile photo | `assets/mukesh_profile_pic.jpg` |
+| Blog posts | `blog/blog/YYYY-MM-DD-slug.md` |
+| Blog site theme / styles | `blog/src/css/custom.css` |
+| Blog site config (title, nav, footer) | `blog/docusaurus.config.js` |
 
 ### Commit workflow
 
@@ -197,7 +290,7 @@ git push origin --delete feature/my-new-section
 
 ---
 
-## 6. Pushing Changes to GitHub
+## 7. Pushing Changes to GitHub
 
 Since this repo uses the `github-personal` SSH alias, push commands work as normal:
 
@@ -234,10 +327,11 @@ URL contains `github-personal` instead of `github.com`.
 
 ---
 
-## 7. Deploying to the Live Website
+## 8. Deploying to the Live Website
 
-Deployment pushes your local files to the `gh-pages` branch, which GitHub Pages
-serves as the live website.
+> **One command deploys everything** — portfolio AND blog.
+> Never run `npm run deploy` inside the `blog/` folder directly; that would
+> overwrite your portfolio on `gh-pages`.
 
 ```bash
 # IMPORTANT: always be on main before deploying
@@ -247,22 +341,37 @@ git checkout main
 npm run deploy
 ```
 
+### What `npm run deploy` does (step by step)
+
+```
+predeploy: npm run build
+  └── node scripts/build.js
+        1. Installs blog/node_modules (first run only, skipped after)
+        2. Runs: npm run build  (inside blog/)  → blog/build/
+        3. Creates a clean _site/ directory
+        4. Copies all portfolio files into _site/
+        5. Copies blog/build/ into _site/blog/
+
+deploy: gh-pages -d _site
+        Pushes _site/ contents to the gh-pages branch → live site
+```
+
 Expected output:
 ```
-> predeploy: "No build step needed for static site"
-> deploy: gh-pages -d .
+[build] Building Docusaurus blog...
+[build] Assembling _site/...
+[build] Copying blog build → _site/blog/...
+[build] Build complete → _site/ is ready for deployment.
 Published
 ```
 
-The live site at **https://Itsmemukesh.github.io/portfolio** updates within 1–2 minutes.
-If you still see the old version, do a hard refresh: `Ctrl + Shift + R`.
+The live site updates within 1–2 minutes. Hard refresh if you see stale content: `Ctrl + Shift + R`.
 
-### What `npm run deploy` does internally
+### First-time setup note
 
-1. Takes all files in the current directory (`.`)
-2. Creates a new commit on the `gh-pages` branch with those files
-3. Force-pushes `gh-pages` to GitHub
-4. GitHub Pages detects the push and rebuilds the live site
+The first `npm run deploy` will run `npm install` inside `blog/` automatically
+(installs Docusaurus and its dependencies). This takes 2–3 minutes once.
+All subsequent deploys skip this step and are much faster.
 
 ### GitHub Pages settings
 
@@ -272,7 +381,7 @@ GitHub Pages must be configured to serve from the `gh-pages` branch:
 
 ---
 
-## 8. Full End-to-End Workflow
+## 9. Full End-to-End Workflow
 
 This is the complete sequence for making a change and getting it live:
 
@@ -285,9 +394,12 @@ git pull origin main
 npm start
 # Open http://localhost:3000 in your browser
 
-# Step 3 — Edit files (index.html / style.css / app.js)
+# Step 3 — Edit files
+#   Portfolio:  index.html / style.css / app.js / blog-posts.json
+#   Blog posts: blog/blog/YYYY-MM-DD-slug.md
 
 # Step 4 — Review your changes in the browser (refresh the page)
+#   For blog preview: npm run start:blog
 
 # Step 5 — Commit
 git add .
@@ -305,7 +417,7 @@ npm run deploy
 
 ---
 
-## 9. Troubleshooting
+## 10. Troubleshooting
 
 ### `npm run deploy` gives "'gh-pages' is not recognized"
 

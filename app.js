@@ -83,7 +83,7 @@ document.addEventListener('click', e => {
 // ============================================================
 function addRevealClasses() {
   const revealTargets = $$(
-    '.service-card, .skill-card, .portfolio-card, .about-stat, .hero-text, .hero-visual'
+    '.service-card, .skill-card, .portfolio-card, .about-stat, .hero-text, .hero-visual, .blog-card'
   );
   revealTargets.forEach(el => el.classList.add('reveal'));
 }
@@ -107,10 +107,10 @@ function initReveal() {
 // ============================================================
 function initStagger() {
   const grids = $$(
-    '.services-grid, .skills-grid, .portfolio-grid, .about-stats-grid'
+    '.services-grid, .skills-grid, .portfolio-grid, .about-stats-grid, .blog-grid'
   );
   grids.forEach(grid => {
-    $$('.service-card, .skill-card, .portfolio-card, .about-stat', grid).forEach((child, i) => {
+    $$('.service-card, .skill-card, .portfolio-card, .about-stat, .blog-card', grid).forEach((child, i) => {
       child.style.transitionDelay = `${i * 60}ms`;
     });
   });
@@ -185,6 +185,65 @@ function initExternalLinks() {
 }
 
 // ============================================================
+// Blog preview — fetch blog-posts.json and render cards
+// ============================================================
+const BLOG_BASE = '/portfolio/blog/';
+
+function formatDate(iso) {
+  return new Date(iso).toLocaleDateString('en-US', {
+    year: 'numeric', month: 'long', day: 'numeric',
+  });
+}
+
+async function initBlog() {
+  const grid = $('#blog-grid');
+  if (!grid) return;
+
+  try {
+    const res = await fetch('blog-posts.json');
+    if (!res.ok) throw new Error('fetch failed');
+    const posts = await res.json();
+
+    const display = posts.slice(0, 3);
+
+    grid.innerHTML = display.map(post => `
+      <a href="${BLOG_BASE}${post.slug}" class="blog-card" target="_blank" rel="noopener noreferrer">
+        <div class="blog-card-top">
+          <span class="blog-category">${post.category}</span>
+          <span class="blog-read-time"><i class="fas fa-clock"></i> ${post.readTime}</span>
+        </div>
+        <h3 class="blog-card-title">${post.title}</h3>
+        <p class="blog-card-excerpt">${post.excerpt}</p>
+        <div class="blog-card-footer">
+          <span class="blog-date"><i class="fas fa-calendar-alt"></i> ${formatDate(post.date)}</span>
+          <span class="blog-read-link">Read post <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="blog-card-tags">
+          ${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+        </div>
+      </a>
+    `).join('');
+
+    // Register new cards for reveal animation
+    $$('.blog-card').forEach(el => {
+      el.classList.add('reveal');
+      revealObserver.observe(el);
+    });
+
+    // Apply stagger delays
+    $$('.blog-card').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 80}ms`;
+    });
+
+  } catch {
+    grid.innerHTML = `
+      <p class="blog-error">
+        Posts couldn't be loaded. <a href="${BLOG_BASE}" target="_blank" rel="noopener noreferrer">Visit the blog directly.</a>
+      </p>`;
+  }
+}
+
+// ============================================================
 // Throttle helper
 // ============================================================
 function throttle(fn, wait) {
@@ -204,6 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStagger();
   initEmailCopy();
   initExternalLinks();
+  initBlog();
 });
 
 window.addEventListener('scroll', throttle(updateNavbar, 16));

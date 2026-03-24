@@ -1,50 +1,35 @@
 [
   {
-    "title": "[Blog content to be updated from technicalwriting.xyz]",
+    "title": "Cloud Documentation Best Practices for SaaS Teams",
     "slug": "cloud-documentation-best-practices",
     "date": "2025-01-15",
-    "tags": [
-      "Cloud Technologies",
-      "Documentation",
-      "SaaS"
-    ],
-    "excerpt": "Insights and best practices for documenting cloud-based solutions and SaaS products - content to be updated from actual blog",
+    "tags": ["Cloud Technologies", "Documentation", "SaaS"],
+    "excerpt": "How to build scalable, maintainable documentation systems for cloud-based products — from architecture to tooling to team workflows.",
     "readTime": "8 min read",
     "featured": true,
     "category": "Technical Writing",
-    "author": "Mukesh Biswas",
-    "note": "Content should be updated from actual blog at technicalwriting.xyz"
+    "author": "Mukesh Biswas"
   },
   {
-    "title": "[Blog content to be updated from technicalwriting.xyz]",
+    "title": "API Documentation Strategies That Developers Actually Use",
     "slug": "api-documentation-strategies",
     "date": "2025-01-08",
-    "tags": [
-      "API Documentation",
-      "Developer Experience",
-      "Technical Writing"
-    ],
-    "excerpt": "Strategies for creating effective API documentation for developers - content to be updated from actual blog",
+    "tags": ["API Documentation", "Developer Experience", "Technical Writing"],
+    "excerpt": "Practical strategies for writing API documentation that developers find, understand, and keep coming back to.",
     "readTime": "6 min read",
     "featured": true,
     "category": "API Documentation",
-    "author": "Mukesh Biswas",
-    "note": "Content should be updated from actual blog at technicalwriting.xyz"
+    "author": "Mukesh Biswas"
   },
   {
-    "title": "[Blog content to be updated from technicalwriting.xyz]",
+    "title": "Cross-Functional Collaboration for Technical Writers",
     "slug": "cross-functional-collaboration-tips",
     "date": "2025-01-01",
-    "tags": [
-      "Collaboration",
-      "Product Management",
-      "Technical Writing"
-    ],
-    "excerpt": "Tips for effective collaboration with product managers, engineers, and developers - content to be updated from actual blog",
+    "tags": ["Collaboration", "Product Management", "Technical Writing"],
+    "excerpt": "How to work effectively with product managers, engineers, and designers to create documentation that ships on time and actually helps users.",
     "readTime": "7 min read",
     "featured": false,
     "category": "Collaboration",
-    "author": "Mukesh Biswas",
-    "note": "Content should be updated from actual blog at technicalwriting.xyz"
+    "author": "Mukesh Biswas"
   }
 ]
