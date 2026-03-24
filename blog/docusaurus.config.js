@@ -13,7 +13,12 @@ const config = {
   projectName: 'portfolio',
 
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -29,6 +34,7 @@ const config = {
         blog: {
           routeBasePath: '/',
           showReadingTime: true,
+          onInlineAuthors: 'ignore',
           blogTitle: 'Mukesh Biswas — Blog',
           blogDescription:
             'Thoughts on technical writing, AI, documentation strategy, and the future of developer experience.',

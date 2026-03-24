@@ -1,10 +1,7 @@
 ---
 slug: cross-functional-collaboration-tips
 title: Cross-Functional Collaboration for Technical Writers
-authors:
-  name: Mukesh Biswas
-  title: Staff Technical Writer
-  url: https://Itsmemukesh.github.io/portfolio/
+authors: [mukesh]
 tags: [collaboration, product-management, technical-writing, career]
 date: 2025-01-01
 ---

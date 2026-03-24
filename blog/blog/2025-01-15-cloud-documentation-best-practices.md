@@ -1,10 +1,7 @@
 ---
 slug: cloud-documentation-best-practices
 title: Cloud Documentation Best Practices for SaaS Teams
-authors:
-  name: Mukesh Biswas
-  title: Staff Technical Writer
-  url: https://Itsmemukesh.github.io/portfolio/
+authors: [mukesh]
 tags: [cloud, documentation, saas, technical-writing]
 date: 2025-01-15
 ---

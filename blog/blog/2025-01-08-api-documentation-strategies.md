@@ -1,10 +1,7 @@
 ---
 slug: api-documentation-strategies
 title: API Documentation Strategies That Developers Actually Use
-authors:
-  name: Mukesh Biswas
-  title: Staff Technical Writer
-  url: https://Itsmemukesh.github.io/portfolio/
+authors: [mukesh]
 tags: [api-documentation, developer-experience, technical-writing]
 date: 2025-01-08
 ---
