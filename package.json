@@ -11,7 +11,7 @@
     "build": "node scripts/build.js",
     "serve:site": "npx serve _site -p 4000",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d _site/portfolio"
+    "deploy": "node node_modules/gh-pages/bin/gh-pages.js -d _site/portfolio"
   },
   "keywords": [],
   "author": "Mukesh Biswas",
