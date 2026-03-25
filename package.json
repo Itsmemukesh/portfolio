@@ -1,17 +1,20 @@
 {
   "name": "mukesh-portfolio",
   "version": "1.0.0",
-  "description": "This directory contains updated portfolio data files based on real information found about Mukesh Biswas.",
+  "description": "Personal portfolio and blog — Mukesh Biswas",
   "homepage": "https://Itsmemukesh.github.io/portfolio",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "python -m http.server 3000",
-    "predeploy": "echo \"No build step needed for static site\"",
-    "deploy": "gh-pages -d ."
+    "install:blog": "npm --prefix blog install",
+    "start:blog": "npm --prefix blog install && npm --prefix blog start",
+    "build": "node scripts/build.js",
+    "serve:site": "npx serve _site -p 4000",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d _site/portfolio"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mukesh Biswas",
   "license": "ISC",
   "devDependencies": {
     "gh-pages": "^6.3.0"
