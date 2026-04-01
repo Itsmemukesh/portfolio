@@ -1,5 +1,16 @@
 [
   {
+    "title": "I Built an AI Agent That Writes Documentation — Here's What I Learned",
+    "slug": "contentGen-blog-article",
+    "date": "2026-01-04",
+    "tags": ["AI Agents", "VS Code", "Technical Writing", "GitHub Copilot", "Documentation", "MCP", "Productivity"],
+    "excerpt": "I built contentGen — a custom VS Code agent that reads a Jira ticket, studies the Figma design, cross-references Confluence, and writes a finished help topic in under 30 minutes. Here's how it works and what building it taught me.",
+    "readTime": "12 min read",
+    "featured": true,
+    "category": "AI & Automation",
+    "author": "Mukesh Biswas"
+  },
+  {
     "title": "Cloud Documentation Best Practices for SaaS Teams",
     "slug": "cloud-documentation-best-practices",
     "date": "2025-01-15",
