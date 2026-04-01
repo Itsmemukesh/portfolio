@@ -1,16 +1,18 @@
-# I Built an AI Agent That Writes Documentation — Here's What I Learned
-
-*By [Your Name] | AI Content Engineer*
-
+---
+slug: contentGen-blog-article
+title: I Built an AI Agent That Writes Documentation — Here's What I Learned
+authors: [mukesh]
+tags: [ai-agents, vs-code, technical-writing, documentation, mcp, productivity, github-copilot]
+date: 2026-01-04
 ---
 
 There's a quiet crisis in technical documentation that nobody puts on a roadmap, nobody files a ticket for, and nobody celebrates solving. Features ship fast. Designs change at 3pm on a Friday. A Jira ticket gets marked Done while the help article describing it doesn't exist yet — or worse, still describes the old behavior. The documentation team is always playing catch-up, always the last to know, always sprinting to close a gap that opens faster than it can be filled.
 
 I've lived that cycle as a technical writer for years. So I built something to fix it.
 
-This is the story of **contentGen** — a custom AI agent I built inside VS Code that reads a Jira ticket, studies the Figma design, cross-references Confluence, checks the existing documentation codebase, and then writes a finished, convention-compliant help topic. What used to consume the better part of a working day now takes under 30 minutes. This article is about how it works, what it took to build it, and why I think VS Code agents are one of the most underestimated tools in the industry right now.
+<!-- truncate -->
 
----
+This is the story of **contentGen** — a custom AI agent I built inside VS Code that reads a Jira ticket, studies the Figma design, cross-references Confluence, checks the existing documentation codebase, and then writes a finished, convention-compliant help topic. What used to consume the better part of a working day now takes under 30 minutes. This article is about how it works, what it took to build it, and why I think VS Code agents are one of the most underestimated tools in the industry right now.
 
 ## 1. The Problem Nobody Talks About in Tech Docs
 
@@ -33,8 +35,6 @@ Now multiply that across a fast-moving product team with multiple concurrent rel
 
 The bottleneck isn't skill. It's context-gathering. And context-gathering is exactly what AI is good at.
 
----
-
 ## 2. What Is a VS Code Agent — And Why Most People Underestimate Them
 
 Most people who've used GitHub Copilot think of it as an autocomplete engine that got smarter. A helpful pair programmer. A fast way to generate boilerplate. That's a reasonable impression if you've only used the chat panel.
@@ -54,8 +54,6 @@ When invoked, the agent can:
 
 The key insight that most developers and writers miss is this: **VS Code agents aren't assistants that respond to prompts. They are autonomous actors that execute workflows.** The difference matters enormously once you start building with them.
 
----
-
 ## 3. Meet contentGen: My Documentation Agent
 
 **contentGen** is a custom VS Code agent I designed and built from scratch. The elevator pitch is simple:
@@ -67,8 +65,6 @@ But the real value isn't the output — it's what happens between the input and 
 It sits inside the documentation repository as a single `.agent.md` configuration file. When a writer — or a PM, or an engineer who wants to contribute — invokes it from VS Code, it takes over the research and context-gathering phase entirely, leaving the writer to review and refine rather than discover and draft.
 
 The agent is purpose-built for a MadCap Flare documentation environment, integrated with Atlassian's Jira and Confluence, connected to Figma, and wired into the GitHub repository. It knows the project's folder structure, writing conventions, snippet libraries, template patterns, and localization constraints. It doesn't just write documentation. It writes *this team's* documentation.
-
----
 
 ## 4. How It Actually Works: The Research-Then-Write Pipeline
 
@@ -94,8 +90,6 @@ Here's the pipeline in plain English:
 
 The total time for this pipeline, from invocation to a ready-to-review draft: **under 30 minutes.** The equivalent manual process averaged **five to six hours.**
 
----
-
 ## 5. The Skills Architecture: Modular Intelligence
 
 One of the most important design decisions I made while building contentGen was separating its domain knowledge into modular "skill" files rather than baking everything into the agent definition.
@@ -113,8 +107,6 @@ contentGen uses five skills:
 This modular approach does something subtle but powerful: it makes the agent **maintainable**. If the style guide changes, you update one skill file. If the localization rules get more complex, you update one skill file. The agent itself stays stable. The knowledge it applies evolves independently.
 
 It also makes the system **extensible**. Want to add support for a new documentation product? Create a new skills file that describes its conventions. The agent picks it up automatically.
-
----
 
 ## 6. Built-In Guardrails: This Agent Asks Before It Acts
 
@@ -134,8 +126,6 @@ contentGen has explicit boundaries encoded into its definition. These aren't aft
 
 These guardrails are what make the agent trustworthy enough to run on a production documentation codebase. Impressive output from an AI that can't be trusted is a liability, not an asset.
 
----
-
 ## 7. What It Took to Build It: Design Decisions and Non-Obvious Challenges
 
 Building contentGen from scratch taught me things about AI agents that I didn't find in any tutorial.
@@ -150,8 +140,6 @@ Building contentGen from scratch taught me things about AI agents that I didn't 
 
 **The confirmation gate changed how I thought about the agent.** Originally, I built the confirmation step as a safety feature. Over time I came to see it differently: it's a communication protocol between the agent and the writer. The proposal summary the agent produces before writing is itself valuable — it forces the agent to articulate its reasoning and gives the writer a fast way to spot misunderstandings before they become wrong files.
 
----
-
 ## 8. Real-World Impact: Before and After
 
 Let me give you the honest comparison.
@@ -163,8 +151,6 @@ Let me give you the honest comparison.
 The quality difference matters too. Manually researched documentation is only as good as what the writer happened to find and prioritize. contentGen reads all of it — every linked ticket, every Confluence note, every Figma annotation — and incorporates it. The drafts it produces are more complete on first pass precisely because the research is more thorough than any human would do under deadline pressure.
 
 This isn't about replacing writers. The writer's review and refinement step is still essential, and the agent is built to require it. What's been eliminated is the grinding, low-creativity, high-effort research that precedes real writing — the part that consumes time without producing insight.
-
----
 
 ## 9. What This Tells Us About the Future of Docs — and AI Agents
 
@@ -180,8 +166,6 @@ VS Code agents — and the MCP protocol that wires them to real data systems —
 
 If you're a technical writer, a docs engineer, or a PM who owns documentation quality and you're not experimenting with agents built on this platform, this is the moment to start.
 
----
-
 ## 10. What's Next for contentGen
 
 contentGen is working in production, but the backlog of ideas for what it could do next is longer than when I started.
@@ -194,12 +178,4 @@ Longer term, I want to extend the skills architecture to support **multiple docu
 
 There's also the question that every tool builder eventually confronts: **should I share it?** The core agent pattern is generic enough to be useful outside this specific codebase. I'm thinking through what a generalized version of contentGen would look like — one that could be seeded with a team's own style guide, folder conventions, and tool connections.
 
-If you're working on something similar, or thinking about how to bring this kind of workflow automation to your documentation team — I'd genuinely like to compare notes. Drop a comment or reach out directly.
-
----
-
-*[Your Name] is an AI Content Engineer currently working on next-generation documentation workflows at the intersection of technical writing and AI tooling. This article was written by a human who spent way too long doing manually what an agent now does in 30 minutes.*
-
----
-
-**Tags:** `AI Agents` `VS Code` `Technical Writing` `GitHub Copilot` `Documentation` `MCP` `Productivity` `AI Content Engineering` `contentGen`
+If you're working on something similar, or thinking about how to bring this kind of workflow automation to your documentation team — I'd genuinely like to compare notes. Find me on [LinkedIn](https://www.linkedin.com/in/mukesh-biswas-tech-writer/).
